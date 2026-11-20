@@ -1,0 +1,47 @@
+{
+  "name": "visitor-management-system",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
+    "db:reset": "node -e \"require('fs').rmSync('data',{recursive:true,force:true});console.log('database removed - it is re-created and re-seeded on next start')\"",
+    "start": "node build",
+    "test:smoke": "node scripts/smoke-test.mjs",
+    "db:migrate": "node scripts/migrate-db.mjs"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.16",
+    "@sveltejs/adapter-auto": "^4.0.0",
+    "@sveltejs/kit": "^2.16.0",
+    "@sveltejs/vite-plugin-svelte": "^5.0.0",
+    "@tailwindcss/vite": "^4.1.18",
+    "prettier": "^3.5.3",
+    "prettier-plugin-svelte": "^3.3.3",
+    "svelte": "^5.0.0",
+    "svelte-check": "^4.0.0",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.5.3",
+    "vite": "^6.0.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@sveltejs/adapter-node": "^5.5.1",
+    "chart.js": "^4.6.1",
+    "jsqr": "^1.4.0",
+    "lucide-svelte": "^0.553.0",
+    "nodemailer": "^10.6.0",
+    "pg": "^8.23.1",
+    "qrcode": "^1.5.4",
+    "uuid": "^13.0.0",
+    "xlsx": "^0.18.5"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "description": "Visitor management: OTP check-in, host approval, pre-booking with time slots, reception desk, HR and admin portals. SQLite or PostgreSQL.",
+  "license": "AGPL-3.0-only OR SEE LICENSE IN COMMERCIAL-LICENSE.md"
+}
